@@ -19,22 +19,25 @@ function App() {
       setAlert({type:'',msg:''})
     },2000)
   }
-  const toggleMode=()=>{
+
+  const toggleMod=()=>{
     if(mode==='light'){
       setMode('dark');
       document.body.style.backgroundColor="rgb(4,4,56)";
       showAlert("Dark mode has been enable","success");
+      document.title= 'TextUtils-DarkMode';
     }
     else{
       setMode('light');
       document.body.style.backgroundColor="white";
       showAlert("Light mode has been enabled","success")
+      document.title= 'TextUtils-LightMode';
     }
   }
 
   return (
     <>
-      <Navbar title="TextUtils" about="About_T" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="TextUtils" about="About_T" mode={mode} toggleMode={toggleMod}/>
       <Alert alert={alert}/>
       <div className="container my.4">
         {/* <About/> */}
